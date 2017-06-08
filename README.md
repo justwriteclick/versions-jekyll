@@ -7,8 +7,9 @@ Fork me! This way you can see for yourself how versioning works on web sites whe
 GitHub organization/repository:
 
 ```
-4.1.yml
-4.1.1.yml
+_4.1.yml
+_4.1.1.yml
+_config.yml
 release-notes.md
 install-guide/introduction.md
 install-guide/preparation.md
@@ -16,19 +17,18 @@ install-guide/confirmation.md
 install-guide/production.md
 ```
 
-The `4.1.yml` build configuration file contains:
+The `_4.1.yml` build configuration file contains:
 
 ```
-destination: 4.1/release-notes/
-source: 'release-notes.md'
-destination: 4.1/install-guide/
-source: 'install-guide'
+source: ''
+destination: _site/versions/4.1
 ```
 
-Build with this command:
+Build with these commands, incrementally, so that the files are copied into a _site directory:
 
 ```
-$ bundle exec jekyll build --config _config.yml,4.1.yml
+$ bundle exec jekyll build --config _config.yml
+$ bundle exec jekyll build --config _4.1.yml
 ```
 
 ## Output (static site files and folders)
