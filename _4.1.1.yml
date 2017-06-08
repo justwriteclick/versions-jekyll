@@ -6,4 +6,4 @@
 # Version Settings
 version                    : 4.1.1
 source                     : ''
-destination                : _output/version/4.1.1
+destination                : version/4.1.1
