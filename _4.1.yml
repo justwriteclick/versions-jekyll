@@ -6,4 +6,4 @@
 # Version Settings
 version                    : 4.1
 source                     : ''
-destination                : version/4.1
+destination                : _site/version/4.1
