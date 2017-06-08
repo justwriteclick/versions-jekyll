@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-theme                    : minimal-mistakes-jekyll
+theme                    : minima
 locale                   : "en"
 title                    : "Fake Site for Versions"
 title_separator          : "-"
@@ -15,7 +15,7 @@ description              : "An example site and repo for controlling versions of
 url                      : https://justwriteclick.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : /versions-jekyll # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-destination              : _output/version/current
+destination              : _site/version/current
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -179,19 +179,15 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
 gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
+#  - jekyll-sitemap
+#  - jekyll-gist
+#  - jekyll-feed
 
 # mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
+#  - jekyll-sitemap
+#  - jekyll-gist
+#  - jekyll-feed
 
 
 # Archives
