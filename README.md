@@ -10,18 +10,16 @@ GitHub organization/repository:
 _4.1.yml
 _4.1.1.yml
 _config.yml
+index.html
 release-notes.md
 install-guide/introduction.md
-install-guide/preparation.md
-install-guide/confirmation.md
-install-guide/production.md
 ```
 
 The `_4.1.yml` build configuration file contains:
 
 ```
 source: ''
-destination: _site/versions/4.1
+destination: docs/versions/4.1
 ```
 
 Build with these commands, incrementally, so that the files are copied into a _site directory:
@@ -39,15 +37,9 @@ docs.example.com
 4.1/index.html
 4.1/release-notes/
 4.1/install-guide/introduction/
-4.1/install-guide/preparation/
-4.1/install-guide/confirmation/
-4.1/install-guide/production/
 4.1.1/index.html
 4.1.1/release-notes/
 4.1.1/install-guide/introduction/
-4.1.1/install-guide/preparation/
-4.1.1/install-guide/confirmation/
-4.1.1/install-guide/production/
 ```
 
 
