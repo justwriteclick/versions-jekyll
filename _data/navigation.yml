@@ -1,11 +1,8 @@
 # main links
 main:
-  - title: "Versioned Release Notes 4.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1/release-notes.md
-  - title: "Versioned Release Notes 4.1.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1.1/release-notes.md
-  - title: "Versioned Install Guide 4.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1/install-guide/
-  - title: "Versioned Install Guide 4.1.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1.1/install-guide/
+  - title: "Release 4.1"
+    url: https://justwriteclick.github.io/versions-jekyll/4.1/
+  - title: "Release 4.1.1"
+    url: https://justwriteclick.github.io/versions-jekyll/4.1.1/
+
 
