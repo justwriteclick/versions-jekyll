@@ -12,9 +12,10 @@ title                    : "Fake Site for Versions"
 title_separator          : "-"
 name                     : "Example for versions"
 description              : "An example site and repo for controlling versions of a web site."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+url                      : https://justwriteclick.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : /versions-jekyll # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+destination              : output/version/current
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -78,10 +79,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Anne Gentle"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "Product manager, innovator, optimist, bridge-builder."
+  location         : "ATX"
   email            :
   uri              :
   bitbucket        :
@@ -136,8 +137,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
