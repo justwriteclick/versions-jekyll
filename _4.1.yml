@@ -1,0 +1,9 @@
+# This config file is meant for indicating the version number for output. Use
+# this config by running `bundle exec jekyll build --config file.yml`.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
+
+# Version Settings
+version                    : 4.1
+source                     : ''
+destination                : _output/version/4.1
