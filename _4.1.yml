@@ -6,4 +6,4 @@
 # Version Settings
 version                    : 4.1
 source                     : ''
-destination                : docs/version/4.1
+destination                : version/4.1
