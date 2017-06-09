@@ -1,8 +1,10 @@
 # main links
 main:
+  - title: "Current Release"
+    url: https://justwriteclick.github.io/versions-jekyll/version/current/
   - title: "Release 4.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1/
+    url: https://justwriteclick.github.io/versions-jekyll/version/4.1/
   - title: "Release 4.1.1"
-    url: https://justwriteclick.github.io/versions-jekyll/4.1.1/
+    url: https://justwriteclick.github.io/versions-jekyll/version/4.1.1/
 
 
