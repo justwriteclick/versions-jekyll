@@ -30,9 +30,9 @@ do
   echo "Build with $i file"
     bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
     if [ $? = 0 ]; then
-      echo "Jekyll build successful"
+      echo "Jekyll build with $1 successful"
     else
-      echo "Jekyll build failed"
+      echo "Jekyll build with $1 failed"
       exit 1
     fi
 done
