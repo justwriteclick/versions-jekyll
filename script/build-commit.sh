@@ -35,6 +35,7 @@ do
       echo "Jekyll build failed"
       exit 1
     fi
+done
 # Check out origin gh-pages branch
 echo "Checking out gh-pages branch"
 git checkout gh-pages
@@ -61,5 +62,5 @@ rm -rf /tmp/$build_dir/
 echo "Switch to the /tmp/archive/ directory and look for the directory "
 echo "named with the latest commit SHA, "
 echo "found by running git log -n 1 --pretty=oneline."
-done
+
 
