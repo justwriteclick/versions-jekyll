@@ -1,2 +1,7 @@
 _site
-
+Gemfile*
+LICENSE*
+README.md
+script
+Rakefile
+package.json
