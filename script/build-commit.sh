@@ -25,17 +25,32 @@ git clone git@github.com:justwriteclick/versions-jekyll.git
 cd versions-jekyll
 # Variable for temporary build output files location
 build_dir="/tmp/build_$last_SHA/"
-for i in _config.yml _4.1.yml _4.1.1.yml
-do
-  echo "Build with $i file"
-    bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
-    if [ $? = 0 ]; then
-      echo "Jekyll build with $1 successful"
-    else
-      echo "Jekyll build with $1 failed"
-      exit 1
-    fi
-done
+# Check out individual version branches and build those with the gh-pages script to a single build_dir
+bundle exec jekyll build --config _config.yml
+-d /tmp/build_$last_SHA/ > /dev/null 2>&1
+      if [ $? = 0 ]; then
+        echo "Jekyll build with master branch successful"
+      else
+        echo "Jekyll build with master branch failed"
+        exit 1
+      fi
+# Rather than hardcoding branch names, use git to list them and go through all
+# stable branches
+for v in stable/4.1 stable/4.1.1
+  do
+    git checkout $v
+    for i in _4.1.yml _4.1.1.yml
+      do
+        echo "Build with $i file"
+        bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
+        if [ $? = 0 ]; then
+          echo "Jekyll build with $1 successful"
+        else
+          echo "Jekyll build with $1 failed"
+          exit 1
+        fi
+      done
+  done
 # Check out origin gh-pages branch
 echo "Checking out gh-pages branch"
 git checkout gh-pages
