@@ -26,8 +26,7 @@ cd versions-jekyll
 # Variable for temporary build output files location
 build_dir="/tmp/build_$last_SHA/"
 # Check out individual version branches and build those with the gh-pages script to a single build_dir
-bundle exec jekyll build --config _config.yml
--d /tmp/build_$last_SHA/ > /dev/null 2>&1
+bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/null 2>&1
       if [ $? = 0 ]; then
         echo "Jekyll build with master branch successful"
       else
