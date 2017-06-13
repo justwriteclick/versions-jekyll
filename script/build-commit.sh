@@ -35,9 +35,20 @@ bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/nu
       fi
 # Rather than hardcoding branch names, use git to list them and go through all
 # stable branches
+
+if branch=$(git symbolic-ref --short -q HEAD); then
+  echo on branch $branch
+  if [[ "$branch" == *"$stable"* ]]; then
+      echo "'$branch' is a stable branch, it is '$stable'";
+  else
+      echo "'$branch' is not a stable branch, it is '$stable'";
+else
+  echo not on any branch
+fi
 for v in stable/4.1 stable/4.1.1
   do
     git checkout $v
+    git branch | grep *
     for i in _4.1.yml _4.1.1.yml
       do
         echo "Build with $i file"
