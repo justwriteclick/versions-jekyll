@@ -33,6 +33,7 @@ bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/nu
         echo "Jekyll build with master branch failed"
         exit 1
       fi
+
 # Rather than hardcoding branch names, use git to list them and go through all
 # stable branches
 
@@ -42,6 +43,7 @@ if branch=$(git symbolic-ref --short -q HEAD); then
       echo "'$branch' is a stable branch, it is '$stable'";
   else
       echo "'$branch' is not a stable branch, it is '$stable'";
+  fi
 else
   echo not on any branch
 fi
