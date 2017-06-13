@@ -41,12 +41,10 @@ if branch=$(git symbolic-ref --short -q HEAD); then
   echo on branch $branch
   if [[ "$branch" == *"$stable"* ]]; then
       echo "'$branch' is named '$stable'"
-      for v in stable/4.1 stable/4.1.1
+      for v in 4.1 4.1.1
     do
-      git checkout $v
-      for i in _4.1.yml _4.1.1.yml
-        do
-          echo "Build with $i file"
+      git checkout stable/$v
+      echo "Build with $i file"
           bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
           if [ $? = 0 ]; then
             echo "Jekyll build with $1 successful"
@@ -54,9 +52,7 @@ if branch=$(git symbolic-ref --short -q HEAD); then
             echo "Jekyll build with $1 failed"
             exit 1
           fi
-        done
     done
-
   else
       echo "'$branch' is not a stable branch, it is '$stable'";
   fi
