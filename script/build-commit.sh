@@ -40,29 +40,29 @@ bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/nu
 if branch=$(git symbolic-ref --short -q HEAD); then
   echo on branch $branch
   if [[ "$branch" == *"$stable"* ]]; then
-      echo "'$branch' is a stable branch, it is '$stable'";
+      echo "'$branch' is named '$stable'"
+      for v in stable/4.1 stable/4.1.1
+    do
+      git checkout $v
+      for i in _4.1.yml _4.1.1.yml
+        do
+          echo "Build with $i file"
+          bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
+          if [ $? = 0 ]; then
+            echo "Jekyll build with $1 successful"
+          else
+            echo "Jekyll build with $1 failed"
+            exit 1
+          fi
+        done
+    done
+
   else
       echo "'$branch' is not a stable branch, it is '$stable'";
   fi
 else
   echo not on any branch
 fi
-for v in stable/4.1 stable/4.1.1
-  do
-    git checkout $v
-    git branch | grep *
-    for i in _4.1.yml _4.1.1.yml
-      do
-        echo "Build with $i file"
-        bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
-        if [ $? = 0 ]; then
-          echo "Jekyll build with $1 successful"
-        else
-          echo "Jekyll build with $1 failed"
-          exit 1
-        fi
-      done
-  done
 # Check out origin gh-pages branch
 echo "Checking out gh-pages branch"
 git checkout gh-pages
