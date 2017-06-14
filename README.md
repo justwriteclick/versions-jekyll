@@ -18,8 +18,10 @@ install-guide/introduction.md
 The `_4.1.yml` build configuration file contains:
 
 ```
+url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
+baseurl                  : /versions-jekyll # the subpath of the site
 source: ''
-destination: docs/versions/4.1
+destination: version/4.1
 ```
 
 Build with these commands, incrementally, so that the files are copied into a _site directory:
