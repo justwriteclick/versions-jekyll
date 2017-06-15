@@ -1,6 +1,6 @@
 ---
 title: Example 4.1 version landing page
-layout: home
+layout: single
 author_profile: false
 ---
 

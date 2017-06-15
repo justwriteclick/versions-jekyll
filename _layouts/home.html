@@ -2,9 +2,9 @@
 layout: archive
 ---
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Pages" }}</h3>
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_pages | default: "Recent Pages" }}</h3>
 
-{% for post in paginator.pages %}
+{% for page in paginator.pages %}
   {% include archive-single.html %}
 {% endfor %}
 
