@@ -46,15 +46,15 @@ $ bundle exec jekyll build --config _4.1.yml
 
 ## Output (static site files and folders)
 
-The URL is this: `https://justwriteclick.github.io/versions-jekyll/` and then all the folders below are what are output.
+The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
 ```
-versions/4.1/index.html
-versions/4.1/release-notes/
-versions/4.1/install-guide/introduction/
-versions/4.1.1/index.html
-versions/4.1.1/release-notes/
-versions/4.1.1/install-guide/introduction/
+version/4.1/index.html
+version/4.1/release-notes/
+version/4.1/install-guide/introduction/
+version/4.1.1/index.html
+version/4.1.1/release-notes/
+version/4.1.1/install-guide/introduction/
 ```
 
 ## License
