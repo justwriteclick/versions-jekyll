@@ -8,4 +8,4 @@ url                      : https://justwriteclick.github.io # the base hostname 
 baseurl                  : /versions-jekyll # the subpath of the site
 version                  : 4.1.1
 source                   : ''
-destination              : docs/4.1.1
+destination              : 4.1.1
