@@ -19,9 +19,9 @@ _4.1.yml
 _4.1.1.yml
 _config.yml
 index.html
-version/index.html
+_version/index.html
 _pages/release-notes.md
-_pages/install-guide/introduction.md
+_installguide/introduction.md
 ```
 
 The `_4.1.yml` build configuration file contains:
@@ -29,8 +29,9 @@ The `_4.1.yml` build configuration file contains:
 ```
 url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
 baseurl                  : /versions-jekyll # the subpath of the site
-source: ''
-destination: versions/4.1
+version                  : 4.1
+source                   : ''
+destination              : 4.1
 ```
 
 This configuration indicates to Jekyll, "hey, I want you to take everything buildable in the root of the repo, and output it to a versions/4.1 directory."
@@ -49,13 +50,19 @@ $ bundle exec jekyll build --config _4.1.yml
 The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
 ```
-version/4.1/index.html
-version/4.1/release-notes/
-version/4.1/install-guide/introduction/
-version/4.1.1/index.html
-version/4.1.1/release-notes/
-version/4.1.1/install-guide/introduction/
+/4.1/index.html
+/4.1/release-notes/
+/4.1/install-guide/introduction/
+/4.1.1/index.html
+/4.1.1/release-notes/
+/4.1.1/install-guide/introduction/
 ```
+
+## References
+
+http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/
+
+https://mademistakes.com/articles/using-jekyll-2016/
 
 
 ## License
