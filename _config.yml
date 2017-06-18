@@ -113,7 +113,7 @@ author:
 include:
   - .htaccess
   - _pages
-  - _install-guide
+  - _installguide
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -138,6 +138,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - script
 keep_files:
   - .git
   - .svn
