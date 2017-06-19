@@ -31,7 +31,7 @@ url                      : https://justwriteclick.github.io # the base hostname 
 baseurl                  : /versions-jekyll # the subpath of the site
 version                  : 4.1
 source                   : ''
-destination              : 4.1
+destination              : _site/4.1
 ```
 
 This configuration indicates to Jekyll, "hey, I want you to take everything buildable in the root of the repo, and output it to a versions/4.1 directory."
