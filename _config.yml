@@ -7,7 +7,6 @@
 
 # Site Settings
 theme                    : minimal-mistakes-jekyll
-version                  : current
 locale                   : "en"
 title                    : "Fake Site for Versions"
 title_separator          : "-"
@@ -16,7 +15,7 @@ description              : "An example site and repo for controlling versions of
 url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
 baseurl                  : /versions-jekyll # the subpath of the site
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-destination              : _site/current
+destination              : _site
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -241,10 +240,21 @@ collections:
     output: true
     permalink: /:collection/:path/
     title: Release Notes
-  versions:
+  current:
     output: true
-    permalink: /:collection/:path/
-    title: Versions
+    permalink: /:collection/:path
+    version: current # Depending on your requirements, you may not need this variable. Also you may be able to default it using :collection, but I haven't tried that.
+    title: Latest Release
+  "4.1": # quoting version number to avoid the error: undefined method `gsub' for 4.1:Float
+    output: true
+    permalink: /:collection/:path
+    version: "4.1"
+    title: Release 4.1 - Lord Chuggington
+  "4.1.1":
+    output: true
+    permalink: /:collection/:path
+    version: "4.1.1"
+    title: Release 4.1.1 - Bunny Slippers
 
 # Defaults
 defaults:
