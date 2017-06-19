@@ -4,8 +4,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Version Settings
-version                    : 4.1
 url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
 baseurl                  : /versions-jekyll # the subpath of the site
-source                     : ''
-destination                : version/4.1
+version                  : 4.1
+source                   : ''
+destination              : _site/4.1

@@ -1,10 +1,20 @@
 # main links
 main:
   - title: "Current Release"
-    url: https://justwriteclick.github.io/versions-jekyll/version/current/
+    url: https://justwriteclick.github.io/versions-jekyll/current/
   - title: "Release 4.1"
-    url: https://justwriteclick.github.io/versions-jekyll/version/4.1/
+    url: https://justwriteclick.github.io/versions-jekyll/4.1/
   - title: "Release 4.1.1"
-    url: https://justwriteclick.github.io/versions-jekyll/version/4.1.1/
+    url: https://justwriteclick.github.io/versions-jekyll/4.1.1/
 
+release-notes:
+  - title: Release Notes
+    children:
+      - title: "Release Notes"
+        url: /release-notes/
 
+install-guide:
+  - title: Install Guide
+    children:
+      - title: "Introduction"
+        url: /install-guide/introduction/
