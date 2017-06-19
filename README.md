@@ -58,12 +58,12 @@ The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://ju
 /4.1.1/install-guide/introduction/
 ```
 
+=======
 ## References
 
 http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/
 
 https://mademistakes.com/articles/using-jekyll-2016/
-
 
 ## License
 
