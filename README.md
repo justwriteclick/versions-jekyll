@@ -1,37 +1,58 @@
 # [Test for versions](http://docslikecode.com)
 
-Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub.
+Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using Jekyll and collections.
 
 Here are the general concepts:
 
-- The version control of source is done with git through stable branches.
-- The configuration files set the destination folder at build time.
+- The version control of source is done with git through stable branches or tags, but the version control of output does not depend on stable branches.
+- The versions of the output are not semantically meaningful, and can have silly names if needed.
+- The collection settings in the `_config.yml` sets the destination folder at build time for the versions.
 - The output goes to GitHub Pages, in separate folders, so that the URL also reflects the version number the person is reading on a page.
 - The `master` branch always reflects the current version.
-- Minimal Mistakes is the theme in use, and that means you have hardcoded URLs in the `navigation.yml` file: https://mademistakes.com/work/minimal-mistakes-jekyll-theme/ 
+- Minimal Mistakes is the theme in use, which supports collections.
+- On the front-end, you'd still need to design for scenarios such as "What if the page I want to access on version 4.1.1 does not exist in version 4.1.1? Do you give a 404 error or a special "not found" page when navigating versions?
 
 ## Source (files and folders under version control)
 
 GitHub organization/repository:
 
 ```
-_4.1.yml
-_4.1.1.yml
 _config.yml
 index.html
-_version/index.html
+_4.1/index.md
+_4.1.1/index.md
 _pages/release-notes.md
 _installguide/introduction.md
 ```
 
-The `_4.1.yml` build configuration file contains:
+The `_config.yml` build configuration file contains some settings that help with the version control, using collections:
 
 ```
-url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
-baseurl                  : /versions-jekyll # the subpath of the site
-version                  : 4.1
-source                   : ''
-destination              : _site/4.1
+# Collections
+collections:
+  installguide:
+    output: true
+    permalink: /:collection/:path/
+    title: Installation Guide
+  releasenotes:
+    output: true
+    permalink: /:collection/:path/
+    title: Release Notes
+  current:
+    output: true
+    permalink: /:collection/:path
+    version: current # Depending on your requirements, you may not need this variable. Also you may be able to default it using :collection, but I haven't tried that.
+    title: Latest Release
+  "4.1": # quoting version number to avoid the error: undefined method `gsub' for 4.1:Float
+    output: true
+    permalink: /:collection/:path
+    version: "4.1"
+    title: Release 4.1 - Lord Chuggington
+  "4.1.1":
+    output: true
+    permalink: /:collection/:path
+    version: "4.1.1"
+    title: Release 4.1.1 - Bunny Slippers
 ```
 
 This configuration indicates to Jekyll, "hey, I want you to take everything buildable in the root of the repo, and output it to a versions/4.1 directory."
@@ -64,6 +85,8 @@ The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://ju
 http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/
 
 https://mademistakes.com/articles/using-jekyll-2016/
+
+https://mademistakes.com/work/minimal-mistakes-jekyll-theme/
 
 ## License
 
