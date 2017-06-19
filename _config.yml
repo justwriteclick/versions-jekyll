@@ -6,7 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-theme                    : minima
+theme                    : minimal-mistakes-jekyll
+version                  : current
 locale                   : "en"
 title                    : "Fake Site for Versions"
 title_separator          : "-"
@@ -15,7 +16,7 @@ description              : "An example site and repo for controlling versions of
 url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
 baseurl                  : /versions-jekyll # the subpath of the site
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-destination              : version/current
+destination              : _site/current
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -113,6 +114,7 @@ author:
 include:
   - .htaccess
   - _pages
+  - _installguide
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -137,6 +139,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - script
 keep_files:
   - .git
   - .svn
@@ -176,19 +179,21 @@ permalink: /:categories/:title/
 #paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-
 # Plugins
 gems:
+#  - jekyll-paginate
 #  - jekyll-sitemap
 #  - jekyll-gist
 #  - jekyll-feed
+#  - jekyll-redirect-from
 
 # mimic GitHub Pages with --safe
 whitelist:
+#  - jekyll-paginate
 #  - jekyll-sitemap
 #  - jekyll-gist
 #  - jekyll-feed
-
+#  - jekyll-redirect-from
 
 # Archives
 #  Type
@@ -226,6 +231,20 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  installguide:
+    output: true
+    permalink: /:collection/:path/
+    title: Installation Guide
+  releasenotes:
+    output: true
+    permalink: /:collection/:path/
+    title: Release Notes
+  versions:
+    output: true
+    permalink: /:collection/:path/
+    title: Versions
 
 # Defaults
 defaults:
