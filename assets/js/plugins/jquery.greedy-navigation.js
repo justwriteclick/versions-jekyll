@@ -46,9 +46,7 @@ $(document).ready(function(){
     $btn.attr("count", numOfItems - numOfVisibleItems);
     if (numOfVisibleItems === numOfItems) {
       $btn.addClass('hidden');
-    } else {
-      $btn.removeClass('hidden');
-    }
+    } else $btn.removeClass('hidden');
   }
 
   // Window listeners
@@ -66,7 +64,6 @@ $(document).ready(function(){
     // Mouse has left, start the timer
     timer = setTimeout(function() {
       $hlinks.addClass('hidden');
-      $btn.toggleClass('close');
     }, closingTime);
   }).on('mouseenter', function() {
     // Mouse is back, cancel the timer
