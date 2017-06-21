@@ -47,7 +47,30 @@ $ bundle exec jekyll build --config _4.1.yml
 
 ## Output (static site files and folders)
 
-The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
+The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
+
+Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented. 
+
++------------------+----------------------------------------+-------------------------------------------------------------+
+| Jekyll Variable  | Portion of URL                         | Considerations                                              |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.url         | https://orgname.github.io              | What happens when using a user repo or a                    |
+|                  |                                        | custom domain name?                                         |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.baseurl     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| base_path        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a              |
+|                  |                                        | version representing site.collection, would cross-          |
+|                  |                                        | references always point to `/current`? Is `base_path` only  |
+|                  |                                        | defined in some themes?                                     |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.collection  | /current or /4.1                       | Defined in _config.yml, would need to change                |
+|                  |                                        | collection based on a `stable/versionnumber` branch or      |
+|                  |                                        | `master` branch, where /current maps to master branch.      |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| page.url         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         |
+|                  |                                        | Need to have a version of each install guide.               |
++------------------+----------------------------------------+-------------------------------------------------------------+
 
 ```
 /4.1/index.html
