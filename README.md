@@ -7,7 +7,7 @@ Here are the general concepts:
 - The version control of source is done with git through stable branches or tags, but the version control of output does not depend on stable branches.
 - The versions of the output are not semantically meaningful, and can have silly names if needed.
 - The collection settings in the `_config.yml` sets the destination folder at build time for the versions.
-- The output goes to GitHub Pages, in separate folders, so that the URL also reflects the version number the person is reading on a page.
+- The output goes to GitHub Pages, in separate folders per release, so that the URL also reflects the version number the person is reading on a page.
 - The `master` branch always reflects the current version.
 - Minimal Mistakes is the theme in use, which supports collections.
 - On the front-end, you'd still need to design for scenarios such as "What if the page I want to access on version 4.1.1 does not exist in version 4.1.1? Do you give a 404 error or a special "not found" page when navigating versions?
@@ -23,6 +23,7 @@ _4.1/index.md
 _4.1.1/index.md
 _pages/release-notes.md
 _installguide/introduction.md
+_installguide/deployment.md
 ```
 
 The `_config.yml` build configuration file contains some settings that help with the version control, using collections:
@@ -30,14 +31,6 @@ The `_config.yml` build configuration file contains some settings that help with
 ```
 # Collections
 collections:
-  installguide:
-    output: true
-    permalink: /:collection/:path/
-    title: Installation Guide
-  releasenotes:
-    output: true
-    permalink: /:collection/:path/
-    title: Release Notes
   current:
     output: true
     permalink: /:collection/:path
@@ -55,15 +48,12 @@ collections:
     title: Release 4.1.1 - Bunny Slippers
 ```
 
-This configuration indicates to Jekyll, "hey, I want you to take everything buildable in the root of the repo, and output it to a versions/4.1 directory."
+This configuration indicates to Jekyll, "Hey, I want you to output these collections to a /releasenumber directory."
 
-This configuration means that 
-
-Build with these commands, incrementally, so that the files are copied into a _site directory:
+Build with a script, writing the added release number collections into `_config.yml` file for each stable branch.
 
 ```
 $ bundle exec jekyll build --config _config.yml
-$ bundle exec jekyll build --config _4.1.yml
 ```
 
 ## Output (static site files and folders)

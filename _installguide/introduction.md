@@ -1,6 +1,6 @@
 ---
 title: Fake Introduction to Install Guide
-permalink: /install-guide/introduction/
+permalink: /current/install-guide/introduction/
 layout: single
 ---
 
