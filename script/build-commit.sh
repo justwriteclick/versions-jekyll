@@ -27,6 +27,12 @@ cd versions-jekyll
 # Variable for temporary build output files location
 build_dir="/tmp/build_$last_SHA/"
 # Check out individual version branches and build those with the gh-pages script to a single build_dir
+for v in _current _4.1 _4.1.1
+  do
+    cp -r install-guide $v/install-guide
+    cp -r release-notes $v/release-notes
+  done
+
 bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/null 2>&1
       if [ $? = 0 ]; then
         echo "Jekyll build successful"
