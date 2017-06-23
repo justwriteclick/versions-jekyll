@@ -1,0 +1,9 @@
+# Develop override settings
+# Use when building with Docker container and preview.sh script locally
+
+url                      : http://localhost:4000
+
+# Analytics
+analytics:
+  provider               : false
+

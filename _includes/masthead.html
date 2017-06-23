@@ -4,13 +4,11 @@
       <nav id="site-nav" class="greedy-nav">
         <a class="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
         <ul class="visible-links">
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = site.url | append: site.baseurl %}
+          {% for c in site.collections %}
+            {% if c.version == nil %}
+              {% continue %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ site.baseurl }}/{{ c.version }}">{{ c.title }}</a></li>
           {% endfor %}
         </ul>
         <button><div class="navicon"></div></button>

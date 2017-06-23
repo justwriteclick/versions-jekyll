@@ -1,5 +1,6 @@
 #!/bin/bash
-# Builds current committed master branch from GitHub to gh-pages, replacing everything in gh-pages
+# Builds current committed master branch from GitHub to gh-pages, replacing
+# everything in gh-pages. Intended to be run locally when you want to publish.
 
 # Variables
 installed="bundle"
@@ -27,41 +28,12 @@ cd versions-jekyll
 build_dir="/tmp/build_$last_SHA/"
 # Check out individual version branches and build those with the gh-pages script to a single build_dir
 bundle exec jekyll build --config _config.yml -d /tmp/build_$last_SHA/ > /dev/null 2>&1
-bundle exec jekyll build --config _4.1.yml -d /tmp/build_$last_SHA/ > /dev/null 2>&1
-bundle exec jekyll build --config _4.1.1.yml  -d /tmp/build_$last_SHA/ > /dev/null 2>&1
       if [ $? = 0 ]; then
         echo "Jekyll build successful"
       else
         echo "Jekyll build failed"
         exit 1
       fi
-
-# Rather than hardcoding branch names, use git to list them and go through all
-# stable branches
-
-#if branch=$(git symbolic-ref --short -q HEAD); then
-#  echo on branch $branch
-#  if [[ "$branch" == *"$stable"* ]]; then
-#      echo "'$branch' is named '$stable'"
-#      for v in 4.1 4.1.1
-#    do
-#      git checkout stable/$v
-#      echo "Build with $i file"
-#          bundle exec jekyll build --config $i -d /tmp/build_$last_SHA/ > /dev/null 2>&1
-#          if [ $? = 0 ]; then
-#            echo "Jekyll build with $1 successful"
-#          else
-#            echo "Jekyll build with $1 failed"
-#            exit 1
-#          fi
-#    done
-#  else
-#      echo "'$branch' is not a stable branch, it is '$stable'";
-#  fi
-#else
-#  echo not on any branch
-#fi
-
 # Check out origin gh-pages branch
 echo "Checking out gh-pages branch"
 git checkout gh-pages
@@ -88,5 +60,4 @@ rm -rf /tmp/$build_dir/
 echo "Switch to the /tmp/archive/ directory and look for the directory "
 echo "named with the latest commit SHA, "
 echo "found by running git log -n 1 --pretty=oneline."
-
 
