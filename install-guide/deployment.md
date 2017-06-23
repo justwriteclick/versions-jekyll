@@ -1,6 +1,5 @@
 ---
 title: Fake Deployment in the Install Guide
-permalink: /install-guide/deployment/
 layout: single
 ---
 
