@@ -232,14 +232,6 @@ compress_html:
 
 # Collections
 collections:
-  installguide:
-    output: true
-    permalink: /:collection/:path/
-    title: Installation Guide
-  releasenotes:
-    output: true
-    permalink: /:collection/:path/
-    title: Release Notes
   current:
     output: true
     permalink: /:collection/:path

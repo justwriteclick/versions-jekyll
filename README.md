@@ -72,14 +72,70 @@ The URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://ju
 
 ```
 /4.1/index.html
-/4.1/release-notes/
-/4.1/install-guide/introduction/
+/4.1/release-notes/index.html
+/4.1/install-guide/introduction/index.html
+/4.1/install-guide/deployment/index.html
 /4.1.1/index.html
-/4.1.1/release-notes/
-/4.1.1/install-guide/introduction/
+/4.1.1/release-notes/index.html
+/4.1.1/install-guide/introduction/index.html
+/4.1.1/install-guide/deployment/index.html
 ```
 
-=======
+## Concepts
+
+I think that there's no way to have nested collections with Jekyll. So you either have to use collections for the versions, and permalink metadata for the guides, or put the version in the permalink metadata.
+
+By using permalink metadata per markdown file for version, you can search-and-replace at release time, replacing `/current` (which remains as the `master` branch permalink) with `/4.1` as the release value.
+
+The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
+
+Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented. 
+
++------------------+----------------------------------------+-------------------------------------------------------------+
+| Jekyll Variable  | Portion of URL                         | Considerations                                              |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.url         | https://orgname.github.io              | What happens when using a user repo or a                    |
+|                  |                                        | custom domain name?                                         |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.baseurl     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| base_path        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a              |
+|                  |                                        | version representing site.collection, would cross-          |
+|                  |                                        | references always point to `/current`? Is `base_path` only  |
+|                  |                                        | defined in some themes?                                     |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| site.collection  | /current or /4.1                       | Defined in _config.yml, would need to change                |
+|                  |                                        | collection based on a `stable/versionnumber` branch or      |
+|                  |                                        | `master` branch, where /current maps to master branch.      |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| page.collection  | installguide                           | Defined in the _config.yml.                                 |
++------------------+----------------------------------------+-------------------------------------------------------------+
+| page.url         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         |
+|                  |                                        | Need to have a version of each install guide.               |
+|                  |                                        | `permalink: /install-guide/introduction/`                   |
++------------------+----------------------------------------+-------------------------------------------------------------+
+
+
++------------------+----------------------------------------+
+| Jekyll Variable  | Portion of URL                         |
++------------------+----------------------------------------+
+| site.url         | https://orgname.github.io              |
++------------------+----------------------------------------+
+| site.baseurl     | /repo-name                             |
++------------------+----------------------------------------+
+| base_path        | https://orgname.github.io/repo-name    |
+|                  | redirects to:                          |
+|                  | http://docs.metacloud.com              |
++------------------+----------------------------------------+
+| site.collection  | /current or /4.1                       |
++------------------+----------------------------------------+
+| page.url         | /install-guide/introduction/index.html |
++------------------+----------------------------------------+
+| permalink:       | /install-guide/introduction/           |
++------------------+----------------------------------------+
+
+
+
 ## References
 
 http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/
