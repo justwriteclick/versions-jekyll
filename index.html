@@ -138,10 +138,6 @@
           
             
               
-            
-              
-            
-              
         </ul>
         <button><div class="navicon"></div></button>
         <ul class="hidden-links hidden"></ul>
@@ -179,7 +175,17 @@
 <p>For each new release, add it to the collections in <code class="highlighter-rouge">_config.yaml</code>,
 and also create a landing page at <code class="highlighter-rouge">_version/index.md</code>.</p>
 
+<p>Each release will have a branch or tag associated with that point-in-time.</p>
+
+<p>Each branch/tag has a copy of all content in markdown.</p>
+
+<p>At build time, take each branch, make a copy, and copy all the markdown content and folders into each <code class="highlighter-rouge">_release</code> folder, for each branch.</p>
+
 <p>New releases are automatically listed in the top navigation.</p>
+
+<p><code class="highlighter-rouge">page.collection</code> is:</p>
+
+<p><code class="highlighter-rouge">site.collection</code> is:</p>
 
         
       </section>
