@@ -1,6 +1,6 @@
 # [Test for versions](http://docslikecode.com)
 
-Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using Jekyll and collections.
+Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using [Jekyll](https://jekyllrb.com) and [collections](https://jekyllrb.com/docs/collections/).
 
 - [Source (files and folders under version control)](#source-files-and-folders-under-version-control)
 - [Output (static site files and folders)](#output-static-site-files-and-folders)
