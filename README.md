@@ -2,17 +2,11 @@
 
 Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using Jekyll and collections.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [[Test for versions](http://docslikecode.com)](#test-for-versionshttpdocslikecodecom)
-	- [Source (files and folders under version control)](#source-files-and-folders-under-version-control)
-- [Collections](#collections)
-	- [Output (static site files and folders)](#output-static-site-files-and-folders)
-	- [Concepts](#concepts)
-	- [References](#references)
-	- [License](#license)
-
-<!-- /TOC -->
+- [Source (files and folders under version control)](#source-files-and-folders-under-version-control)
+- [Output (static site files and folders)](#output-static-site-files-and-folders)
+- [Concepts](#concepts)
+- [References](#references)
+- [License](#license)
 
 Here are the general concepts:
 
