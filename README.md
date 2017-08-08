@@ -1,6 +1,12 @@
 # [Test for versions](http://docslikecode.com)
 
-Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using Jekyll and collections.
+Fork me! This way you can see for yourself how versioning works on web sites where the source files are in GitHub, using [Jekyll](https://jekyllrb.com) and [collections](https://jekyllrb.com/docs/collections/).
+
+- [Source (files and folders under version control)](#source-files-and-folders-under-version-control)
+- [Output (static site files and folders)](#output-static-site-files-and-folders)
+- [Concepts](#concepts)
+- [References](#references)
+- [License](#license)
 
 Here are the general concepts:
 
@@ -60,28 +66,15 @@ $ bundle exec jekyll build --config _config.yml
 
 The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
-Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented. 
+Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
 
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| Jekyll Variable  | Portion of URL                         | Considerations                                              |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.url         | https://orgname.github.io              | What happens when using a user repo or a                    |
-|                  |                                        | custom domain name?                                         |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.baseurl     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| base_path        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a              |
-|                  |                                        | version representing site.collection, would cross-          |
-|                  |                                        | references always point to `/current`? Is `base_path` only  |
-|                  |                                        | defined in some themes?                                     |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.collection  | /current or /4.1                       | Defined in _config.yml, would need to change                |
-|                  |                                        | collection based on a `stable/versionnumber` branch or      |
-|                  |                                        | `master` branch, where /current maps to master branch.      |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| page.url         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         |
-|                  |                                        | Need to have a version of each install guide.               |
-+------------------+----------------------------------------+-------------------------------------------------------------+
+| Jekyll Variable 	| Portion of URL | Considerations|
+|-------------------|----------------|---------------|
+| `site.url`        	| `https://orgname.github.io` | What happens when using a user repo or a custom domain name? |
+| `site.baseurl`    	| `/repo-name`   | Used with project repos only, set in `_config.yml`. |
+| `base_path`       	| `https://orgname.github.io/repo-name`    	| Currently used in cross references, but with a `n.n.n` representing site.collection, would `cross-n.n.n` references always point to `/current`? Is `base_path` only `n.n.n` defined in some themes? 	|
+| `site.collection` 	| `/current` or `/4.1` | Defined in `_config.yml`, would need to change `n.n.n` collection based on a `stable/version number` branch or `n.n.n` `master` branch, where /current maps to master branch.                                  	|
+| `page.url` | `/install-guide/introduction/index.html` 	| Defined in the permalink metadata in each `.md` file `n.n.n`. Need to have a version of each install guide. |
 
 ```
 /4.1/index.html
@@ -102,51 +95,29 @@ By using permalink metadata per markdown file for version, you can search-and-re
 
 The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
-Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented. 
+Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
 
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| Jekyll Variable  | Portion of URL                         | Considerations                                              |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.url         | https://orgname.github.io              | What happens when using a user repo or a                    |
-|                  |                                        | custom domain name?                                         |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.baseurl     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| base_path        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a              |
-|                  |                                        | version representing site.collection, would cross-          |
-|                  |                                        | references always point to `/current`? Is `base_path` only  |
-|                  |                                        | defined in some themes?                                     |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| site.collection  | /current or /4.1                       | Defined in _config.yml, would need to change                |
-|                  |                                        | collection based on a `stable/versionnumber` branch or      |
-|                  |                                        | `master` branch, where /current maps to master branch.      |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| page.collection  | installguide                           | Defined in the _config.yml.                                 |
-+------------------+----------------------------------------+-------------------------------------------------------------+
-| page.url         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         |
-|                  |                                        | Need to have a version of each install guide.               |
-|                  |                                        | `permalink: /install-guide/introduction/`                   |
-+------------------+----------------------------------------+-------------------------------------------------------------+
+| Jekyll Variable 	| Portion of URL | Considerations|
+|-------------------|----------------|---------------|
+| `site.url`         | https://orgname.github.io              | What happens when using a user repo or a custom domain name?                                         |
+| `site.baseurl`     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
+| `base_path`        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a version representing site.collection, would cross-references always point to `/current`? Is `base_path` only defined in some themes?                                     |
+| `site.collection`  | /current or /4.1 | Defined in _config.yml, would need to change                |
+| `collection` | based on a `stable/versionnumber` branch or | `master` branch, where /current maps to master branch.      |
+| `page.collection`  | installguide | Defined in the _config.yml.                                 |
+| `page.url`         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         | Need to have a version of each install guide.
+ | `permalink: /install-guide/introduction/`                   |
 
 
-+------------------+----------------------------------------+
-| Jekyll Variable  | Portion of URL                         |
-+------------------+----------------------------------------+
-| site.url         | https://orgname.github.io              |
-+------------------+----------------------------------------+
-| site.baseurl     | /repo-name                             |
-+------------------+----------------------------------------+
-| base_path        | https://orgname.github.io/repo-name    |
-|                  | redirects to:                          |
-|                  | http://docs.metacloud.com              |
-+------------------+----------------------------------------+
-| site.collection  | /current or /4.1                       |
-+------------------+----------------------------------------+
-| page.url         | /install-guide/introduction/index.html |
-+------------------+----------------------------------------+
-| permalink:       | /install-guide/introduction/           |
-+------------------+----------------------------------------+
 
+| Jekyll Variable 	| Portion of URL |
+|-------------------|---------------------------------------|
+| `site.url`         | https://orgname.github.io              |
+| `site.baseurl`     | /repo-name                             |
+| `base_path`        | https://orgname.github.io/repo-name redirects to:  http://docs.metacloud.com              |
+| `site.collection`  | /current or /4.1                       |
+| `page.url`         | /install-guide/introduction/index.html |
+| `permalink:`       | /install-guide/introduction/           |
 
 
 ## References
