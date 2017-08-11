@@ -1,12 +1,12 @@
 # main links
-release-notes:
-  - title: Release Notes
+user-guide:
+  - title: User Guide
     children:
-      - title: "Release Notes"
-        url: /release-notes/
+      - title: "Introducing Cool Service"
+        url: /user-guide/introduction/
 
 install-guide:
-  - title: Install Guide
+  - title: Installation Guide
     children:
-      - title: "Introduction"
+      - title: "Installation Starting Point"
         url: /install-guide/introduction/
