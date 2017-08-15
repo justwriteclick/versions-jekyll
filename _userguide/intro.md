@@ -1,5 +1,5 @@
 ---
-title: Example User Guide landing page
+title: Example User Guide Intro page
 layout: single
 permalink: /user-guide/introduction/
 author_profile: false

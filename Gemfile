@@ -1,4 +1,12 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.3.0"
+gem "jekyll"
+gem "jekyll-paginate"
+gem "jekyll-sitemap"
+gem "jekyll-gist"
+gem "jekyll-feed"
+gem "jemoji"
+gem "html-proofer"
+gem "yaml-lint"
 gem "minimal-mistakes-jekyll"
+gem "jekyll-redirect-from"
