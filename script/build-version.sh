@@ -27,6 +27,7 @@ git clone git@github.com:justwriteclick/versions-jekyll.git
 cd versions-jekyll
 # Variable for temporary build output files location
 build_dir="/tmp/build_$last_SHA/"
+version=4.1
 # Check out the branch containing versioned content for site
 git checkout $version
 bundle install
