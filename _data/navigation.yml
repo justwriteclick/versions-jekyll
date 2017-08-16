@@ -1,12 +1,30 @@
 # main links
-release-notes:
-  - title: Release Notes
+# links for the top navigation bar
+main:
+  - title: "User Guide"
+    url: /user-guide/
+
+  - title: "Installation Guide"
+    url: /install-guide/
+
+  - title: "Version 4.1"
+    url: https://justwriteclick.github.io/versions-jekyll/4.1/
+
+  - title: "Version 4.2"
+    url: https://justwriteclick.github.io/versions-jekyll/4.2/
+
+user-guide:
+  - title: User Guide
     children:
-      - title: "Release Notes"
-        url: /release-notes/
+      - title: "User Guide"
+        url: /user-guide/
+      - title: "Introducing Cool Service"
+        url: /user-guide/introduction/
 
 install-guide:
-  - title: Install Guide
+  - title: Installation Guide
     children:
-      - title: "Introduction"
+      - title: "Install Guide"
+        url: /install-guide/
+      - title: "Installation Starting Point"
         url: /install-guide/introduction/

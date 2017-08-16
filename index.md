@@ -1,23 +1,19 @@
 ---
-title: Example version collection landing page
-layout: single
+title: Example Jekyll version landing page
+layout: splash
 permalink: /
-author_profile: false
+author_profile: true
+header:
+  overlay_color: "#6fa81e"
+  cta_label: "<i class='fa fa-terminal'></i> Go to repo"
+  cta_url: "https://github.com/justwriteclick/versions-jekyll/"
 ---
 
-This page is the landing page for the root index.html.
+This page is the landing page for the baseurl's root index.html, which builds to either `n.n/index.html` or `latest/index.html`, but the should also have a root index.html.
 
-For each new release, add it to the collections in `_config.yaml`,
-and also create a landing page at `_version/index.md`.
+Read the [Cool Service User Guide]({{base_path}}/versions-jekyll/latest/user-guide/).
 
-Each release will have a branch or tag associated with that point-in-time.
 
-Each branch/tag has a copy of all content in markdown.
+Read the [Cool Service Install Guide]({{base_path}}/versions-jekyll/latest/install-guide/).
 
-At build time, take each branch, make a copy, and copy all the markdown content and folders into each `_release` folder, for each branch.
-
-New releases are automatically listed in the top navigation.
-
-`page.collection` is: {{ page.collection }}
-
-`site.collection` is: {{ site.collection }}
+For each new release, build with a `_config.n.n.yml` file in addition to the `_config.yml` file which builds to a `baseurl` of `repo-name/current`.
