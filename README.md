@@ -97,7 +97,7 @@ The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](
 
 Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
 
-| Jekyll Variable 	| Portion of URL | Considerations|
+| Jekyll Variable   | Portion of URL | Considerations|
 |-------------------|----------------|---------------|
 | `site.url`         | https://orgname.github.io              | What happens when using a user repo or a custom domain name?                                         |
 | `site.baseurl`     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
@@ -110,7 +110,7 @@ Here's a mapping of what Jekyll data is represented in each portion of the URL. 
 
 
 
-| Jekyll Variable 	| Portion of URL |
+| Jekyll Variable   | Portion of URL |
 |-------------------|---------------------------------------|
 | `site.url`         | https://orgname.github.io              |
 | `site.baseurl`     | /repo-name                             |

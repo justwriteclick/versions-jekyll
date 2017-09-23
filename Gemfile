@@ -1,12 +1,10 @@
 source "https://rubygems.org"
 
-gem "jekyll"
-gem "jekyll-paginate"
-gem "jekyll-sitemap"
-gem "jekyll-gist"
-gem "jekyll-feed"
-gem "jemoji"
+gem "jekyll", "~> 3.5"
 gem "html-proofer"
 gem "yaml-lint"
-gem "minimal-mistakes-jekyll"
+gem "minimal-mistakes-jekyll", "~> 4.5.2"
 gem "jekyll-redirect-from"
+# for lunr-js-search
+gem "json"
+gem "jekyll-lunr-js-search"
