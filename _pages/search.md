@@ -4,7 +4,7 @@ title: Search
 permalink: /search/
 ---
 
-Powered by <a href="/blog/2016/01/04/how-to-make-lunrjs-jekyll-work-together/">lunr.js</a>.
+Powered by <a href="https://lunrjs.com/">lunr.js</a>.
 
 <br/>&nbsp;
 <form action="get" id="site_search">
