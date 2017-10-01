@@ -25,14 +25,12 @@ GitHub organization/repository:
 ```
 _config.yml
 index.html
-_4.1/index.md
-_4.1.1/index.md
 _pages/release-notes.md
 _installguide/introduction.md
 _installguide/deployment.md
 ```
 
-The `_config.yml` build configuration file contains some settings that help with the version control, using collections:
+The `_config.yml` build configuration file contains collections for each deliverable, such as an install guide:
 
 ```
 # Collections
@@ -54,51 +52,47 @@ collections:
     title: Release 4.1.1 - Bunny Slippers
 ```
 
-This configuration indicates to Jekyll, "Hey, I want you to output these collections to a /releasenumber directory."
+Previously, the collection configuration  was used for publishing to a /releasenumber directory. Now, this repo uses `baseurl` set in the `_config.yml` file to indicate a version value.
 
-Build with a script, writing the added release number collections into `_config.yml` file for each stable branch.
+Build with a script, writing the added release number collections into a new `_config.x.y.yml` file for each stable branch, where the `_config.x.y.yml` file has `baseurl: x.y`.
 
 ```
-$ bundle exec jekyll build --config _config.yml
+$ bundle exec jekyll build --config _config.yml,_config.x.y.yml --destination _site/x.y
 ```
 
 ## Output (static site files and folders)
 
 The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
-Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
+This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
 
-| Jekyll Variable 	| Portion of URL | Considerations|
-|-------------------|----------------|---------------|
-| `site.url`        	| `https://orgname.github.io` | What happens when using a user repo or a custom domain name? |
-| `site.baseurl`    	| `/repo-name`   | Used with project repos only, set in `_config.yml`. |
-| `base_path`       	| `https://orgname.github.io/repo-name`    	| Currently used in cross references, but with a `n.n.n` representing site.collection, would `cross-n.n.n` references always point to `/current`? Is `base_path` only `n.n.n` defined in some themes? 	|
-| `site.collection` 	| `/current` or `/4.1` | Defined in `_config.yml`, would need to change `n.n.n` collection based on a `stable/version number` branch or `n.n.n` `master` branch, where /current maps to master branch.                                  	|
-| `page.url` | `/install-guide/introduction/index.html` 	| Defined in the permalink metadata in each `.md` file `n.n.n`. Need to have a version of each install guide. |
 
 ```
-/4.1/index.html
-/4.1/release-notes/index.html
-/4.1/install-guide/introduction/index.html
-/4.1/install-guide/deployment/index.html
-/4.1.1/index.html
-/4.1.1/release-notes/index.html
-/4.1.1/install-guide/introduction/index.html
-/4.1.1/install-guide/deployment/index.html
+versions-jekyll/4.1/index.html
+versions-jekyll/4.1/release-notes/index.html
+versions-jekyll/4.1/install-guide/introduction/index.html
+versions-jekyll/4.1/install-guide/deployment/index.html
+versions-jekyll/latest/index.html
+versions-jekyll/latest/release-notes/index.html
+versions-jekyll/latest/install-guide/introduction/index.html
+versions-jekyll/latest/install-guide/deployment/index.html
 ```
 
 ## Concepts
 
-I think that there's no way to have nested collections with Jekyll. So you either have to use collections for the versions, and permalink metadata for the guides, or put the version in the permalink metadata.
+I think that there's no way to have nested collections with Jekyll.
+So you either have to use collections for the versions, and permalink metadata for the guides, or put the version in the permalink metadata when using collections.
 
-By using permalink metadata per markdown file for version, you can search-and-replace at release time, replacing `/current` (which remains as the `master` branch permalink) with `/4.1` as the release value.
+When using permalink metadata per markdown file for version, you can search-and-replace at release time, replacing `/current` (which remains as the `master` branch permalink) with `/4.1` as the release value.
+
+When using `baseurl` from the `_confg.yml` file at build time, you can build to an x.y folder with the correct relative links for everything, as long as your cross-references use `{{site.baseurl}}`.
 
 The website's URL is this: `[https://justwriteclick.github.io/versions-jekyll/](https://justwriteclick.github.io/versions-jekyll/)` and then all the folders below are what are output.
 
 Here's a mapping of what Jekyll data is represented in each portion of the URL. This repo is considered to be a project page from GitHub Page's perspective, so the org name and repo name are both represented.
 
-| Jekyll Variable 	| Portion of URL | Considerations|
-|-------------------|----------------|---------------|
+| Jekyll Variable    | Portion of URL | Considerations|
+|--------------------|----------------|---------------|
 | `site.url`         | https://orgname.github.io              | What happens when using a user repo or a custom domain name?                                         |
 | `site.baseurl`     | /repo-name                             | Used with project repos only, set in `_config.yml`.         |
 | `base_path`        | https://orgname.github.io/repo-name    | Currently used in cross references, but with a version representing site.collection, would cross-references always point to `/current`? Is `base_path` only defined in some themes?                                     |
@@ -106,19 +100,24 @@ Here's a mapping of what Jekyll data is represented in each portion of the URL. 
 | `collection` | based on a `stable/versionnumber` branch or | `master` branch, where /current maps to master branch.      |
 | `page.collection`  | installguide | Defined in the _config.yml.                                 |
 | `page.url`         | /install-guide/introduction/index.html | Defined in the permalink metadata in each .md file.         | Need to have a version of each install guide.
- | `permalink: /install-guide/introduction/`                   |
+| `permalink: /install-guide/introduction/`                   |
 
 
-
-| Jekyll Variable 	| Portion of URL |
-|-------------------|---------------------------------------|
+| Jekyll Variable    | Portion of URL                         |
+|--------------------|----------------------------------------|
 | `site.url`         | https://orgname.github.io              |
 | `site.baseurl`     | /repo-name                             |
-| `base_path`        | https://orgname.github.io/repo-name redirects to:  http://docs.metacloud.com              |
+| `base_path`        | https://orgname.github.io/repo-name redirects to:  http://docs.example.com              |
 | `site.collection`  | /current or /4.1                       |
 | `page.url`         | /install-guide/introduction/index.html |
 | `permalink:`       | /install-guide/introduction/           |
 
+
+## Search considerations
+
+What I'm working on next is setting up a `search_data.json` file template so that the output for `versions-jekyll/latest` using Lunr.js.
+
+Currently, however, there's no way to ignore certain files like `main.css` when building an index for content.
 
 ## References
 
