@@ -3,7 +3,7 @@ layout: null
 ---
 {
   {% for page in site.pages %}
-
+  {% unless page.title == null %}
     "{{ page.url | slugify }}": {
       "title": "{{ page.title | xml_escape }}",
       "content" : "{{ page.content | strip_html | strip_newlines | remove:  "	" | escape | remove: "\"}}",
@@ -11,5 +11,6 @@ layout: null
       "categories": "{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}"
     }
     {% unless forloop.last %},{% endunless %}
+  {% endunless %}
   {% endfor %}
 }

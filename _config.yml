@@ -180,7 +180,6 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-lunr-js-search
 
 
 # mimic GitHub Pages with --safe
