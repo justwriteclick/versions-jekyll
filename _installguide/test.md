@@ -1,5 +1,6 @@
 ---
 title: Creating A Configuration
+search: false
 permalink: /install-guide/creating-configuration/
 redirect_from:
 - /install-guide/get-capabilities/
