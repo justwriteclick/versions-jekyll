@@ -6,16 +6,16 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-theme                    : minima
+theme                    : minimal-mistakes-jekyll
 locale                   : "en"
-title                    : "Fake Site for Versions"
+title                    : "Jekyll Site for Versions"
 title_separator          : "-"
 name                     : "Example for versions"
 description              : "An example site and repo for controlling versions of a web site."
-url                      : https://justwriteclick.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : /versions-jekyll # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-destination              : docs/version/current
+url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
+baseurl                  : /versions-jekyll/latest # the subpath of the site
+repository               : justwriteclick/versions-jekyll # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repo                     : versions-jekyll
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -113,6 +113,8 @@ author:
 include:
   - .htaccess
   - _pages
+  - _userguide
+  - _installguide
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -137,6 +139,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - script
 keep_files:
   - .git
   - .svn
@@ -164,31 +167,28 @@ kramdown:
   enable_coderay: false
 
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+#paginate: 5 # amount of posts to show
+#paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-
 # Plugins
-gems:
-#  - jekyll-sitemap
-#  - jekyll-gist
-#  - jekyll-feed
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+
 
 # mimic GitHub Pages with --safe
 whitelist:
-#  - jekyll-sitemap
-#  - jekyll-gist
-#  - jekyll-feed
-
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
 
 # Archives
 #  Type
@@ -226,6 +226,14 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  userguide:
+    output: true
+    permalink: /:collection/:path/
+  installguide:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -240,3 +248,27 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _userguide folder
+  - scope:
+      path: ""
+      type: userguide
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "user-guide"
+  # _installguide folder
+  - scope:
+      path: ""
+      type: installguide
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "install-guide"
