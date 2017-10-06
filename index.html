@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.4.1 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.5.2 by Michael Rose
   Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
@@ -19,7 +19,7 @@
 
 
 
-<title>Example version collection landing page - Fake Site for Versions</title>
+<title>Example Jekyll version landing page - Jekyll Site for Versions</title>
 
 
 
@@ -32,12 +32,12 @@
 <meta name="author" content="Anne Gentle">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Fake Site for Versions">
-<meta property="og:title" content="Example version collection landing page">
+<meta property="og:site_name" content="Jekyll Site for Versions">
+<meta property="og:title" content="Example Jekyll version landing page">
 
 
-  <link rel="canonical" href="https://justwriteclick.github.io/versions-jekyll/">
-  <meta property="og:url" content="https://justwriteclick.github.io/versions-jekyll/">
+  <link rel="canonical" href="https://justwriteclick.github.io/versions-jekyll/latest/">
+  <meta property="og:url" content="https://justwriteclick.github.io/versions-jekyll/latest/">
 
 
 
@@ -65,7 +65,7 @@
       "@context" : "http://schema.org",
       "@type" : "Person",
       "name" : "Example for versions",
-      "url" : "https://justwriteclick.github.io/versions-jekyll",
+      "url" : "https://justwriteclick.github.io/versions-jekyll/latest",
       "sameAs" : null
     }
   </script>
@@ -78,7 +78,7 @@
 <!-- end SEO -->
 
 
-<link href="https://justwriteclick.github.io/versions-jekyll/feed.xml" type="application/atom+xml" rel="alternate" title="Fake Site for Versions Feed">
+<link href="https://justwriteclick.github.io/versions-jekyll/latest/feed.xml" type="application/atom+xml" rel="alternate" title="Jekyll Site for Versions Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -90,7 +90,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://justwriteclick.github.io/versions-jekyll/assets/css/main.css">
+<link rel="stylesheet" href="https://justwriteclick.github.io/versions-jekyll/latest/assets/css/main.css">
 
 <!--[if lte IE 9]>
   <style>
@@ -106,8 +106,6 @@
     }
   </style>
 <![endif]-->
-
-<meta http-equiv="cleartype" content="on">
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
@@ -115,7 +113,7 @@
 <!-- end custom head snippets -->
   </head>
 
-  <body class="layout--single">
+  <body class="layout--splash">
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
@@ -124,20 +122,24 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://justwriteclick.github.io/versions-jekyll/">Fake Site for Versions</a>
+        <a class="site-title" href="https://justwriteclick.github.io/versions-jekyll/latest/">Jekyll Site for Versions</a>
         <ul class="visible-links">
           
             
-            <li class="masthead__menu-item"><a href="/versions-jekyll/4.1">Release 4.1 - Lord Chuggington</a></li>
+            <li class="masthead__menu-item"><a href="https://justwriteclick.github.io/versions-jekyll/latest/user-guide/">User Guide</a></li>
           
             
-            <li class="masthead__menu-item"><a href="/versions-jekyll/4.1.1">Release 4.1.1 - Bunny Slippers</a></li>
+            <li class="masthead__menu-item"><a href="https://justwriteclick.github.io/versions-jekyll/latest/install-guide/">Installation Guide</a></li>
           
             
-            <li class="masthead__menu-item"><a href="/versions-jekyll/current">Latest Release</a></li>
+            <li class="masthead__menu-item"><a href="https://justwriteclick.github.io/versions-jekyll/4.1/">Version 4.1</a></li>
           
             
-              
+            <li class="masthead__menu-item"><a href="https://justwriteclick.github.io/versions-jekyll/4.2/">Version 4.2</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://justwriteclick.github.io/versions-jekyll/latest/search/">Search</a></li>
+          
         </ul>
         <button><div class="navicon"></div></button>
         <ul class="hidden-links hidden"></ul>
@@ -146,70 +148,61 @@
   </div>
 </div>
 
-
     
-
-
-
-<div id="main" role="main">
   
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Example version collection landing page">
-    
-    
-    
 
-    <div class="page__inner-wrap">
+
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color: #6fa81e; "
+>
+  
+    <div class="wrapper">
+      <h1 class="page__title" itemprop="headline">
+        
+          Example Jekyll version landing page
+
+        
+      </h1>
       
-        <header>
-          <h1 class="page__title" itemprop="headline">Example version collection landing page
-</h1>
-          
-        </header>
       
-
-      <section class="page__content" itemprop="text">
-        <p>This page is the landing page for the root index.html.</p>
-
-<p>For each new release, add it to the collections in <code class="highlighter-rouge">_config.yaml</code>,
-and also create a landing page at <code class="highlighter-rouge">_version/index.md</code>.</p>
-
-<p>Each release will have a branch or tag associated with that point-in-time.</p>
-
-<p>Each branch/tag has a copy of all content in markdown.</p>
-
-<p>At build time, take each branch, make a copy, and copy all the markdown content and folders into each <code class="highlighter-rouge">_release</code> folder, for each branch.</p>
-
-<p>New releases are automatically listed in the top navigation.</p>
-
-<p><code class="highlighter-rouge">page.collection</code> is:</p>
-
-<p><code class="highlighter-rouge">site.collection</code> is:</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-      </footer>
-
       
-
-<!--       -->
+        <p><a href="https://github.com/justwriteclick/versions-jekyll/" class="btn btn--light-outline btn--large"><i class='fa fa-terminal'></i> Go to repo</a></p>
+      
     </div>
-
-    
-  </article>
-
   
   
 </div>
 
+
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Example Jekyll version landing page">
+    
+    
+    
+
+    <section class="page__content" itemprop="text">
+      <p>This page is the landing page for the baseurl’s root index.html, which builds to either <code class="highlighter-rouge">n.n/index.html</code> or <code class="highlighter-rouge">latest/index.html</code>, but the should also have a root index.html.</p>
+
+<p>Read the <a href="/versions-jekyll/latest/user-guide/">Cool Service User Guide</a>.</p>
+
+<p>Read the <a href="/versions-jekyll/latest/install-guide/">Cool Service Install Guide</a>.</p>
+
+<p>For each new release, build with a <code class="highlighter-rouge">_config.n.n.yml</code> file in addition to the <code class="highlighter-rouge">_config.yml</code> file which builds to a <code class="highlighter-rouge">baseurl</code> of <code class="highlighter-rouge">repo-name/current</code>.</p>
+
+    </section>
+  </article>
+</div>
 
     <div class="page__footer">
       <footer>
@@ -225,15 +218,17 @@ and also create a landing page at <code class="highlighter-rouge">_version/index
     
     
     
-    <li><a href="https://justwriteclick.github.io/versions-jekyll/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+    <li><a href="https://justwriteclick.github.io/versions-jekyll/latest/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
 <div class="page__footer-copyright">&copy; 2017 Example for versions. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
       </footer>
     </div>
 
-    <script src="https://justwriteclick.github.io/versions-jekyll/assets/js/main.min.js"></script>
+    <script src="https://justwriteclick.github.io/versions-jekyll/latest/assets/js/main.min.js"></script>
 
 
 
