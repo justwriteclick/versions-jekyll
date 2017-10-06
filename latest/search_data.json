@@ -1,0 +1,46 @@
+{
+  
+    "search-data-json": {
+      "title": "",
+      "content" : "{  {% for installguide in site.installguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}  {% for userguide in site.userguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}}",
+      "url": " /latest/search_data.json",
+      "categories": ""
+    }
+    ,
+  
+    "search-data-json": {
+      "title": "",
+      "content" : "{  {% for installguide in site.installguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}  {% for userguide in site.userguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}}",
+      "url": " /latest/search_data.json",
+      "categories": ""
+    }
+    ,
+  
+    "search-data-json": {
+      "title": "",
+      "content" : "{  {% for installguide in site.installguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}  {% for userguide in site.userguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}}",
+      "url": " /latest/search_data.json",
+      "categories": ""
+    }
+    
+  
+
+  
+    "search-data-json": {
+      "title": "",
+      "content" : "{  {% for installguide in site.installguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}  {% for userguide in site.userguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}}",
+      "url": " /latest/search_data.json",
+      "categories": ""
+    }
+    ,
+  
+    "search-data-json": {
+      "title": "",
+      "content" : "{  {% for installguide in site.installguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}  {% for userguide in site.userguide %}    &quot;{{ page.url | slugify }}&quot;: {      &quot;title&quot;: &quot;{{ page.title | xml_escape }}&quot;,      &quot;content&quot; : &quot;{{ page.content | strip_html | strip_newlines | remove:  &quot;&quot; | escape | remove: &quot;&quot;}}&quot;,      &quot;url&quot;: &quot; {{ site.baseurl | xml_escape }}{{ page.url | xml_escape }}&quot;,      &quot;categories&quot;: &quot;{% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}&quot;    }    {% unless forloop.last %},{% endunless %}  {% endfor %}}",
+      "url": " /latest/search_data.json",
+      "categories": ""
+    }
+    
+  
+
+}
