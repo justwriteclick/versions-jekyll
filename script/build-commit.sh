@@ -5,7 +5,8 @@
 # Variables
 installed="bundle"
 # Variable for the version and branch name to be built
-version=4.1
+branch=master
+version=latest
 
 # Get the latest commit SHA in sourcedir branch
 last_SHA=( $(git log -n 1 --pretty=oneline) )
@@ -28,33 +29,13 @@ git clone git@github.com:justwriteclick/versions-jekyll.git
 cd versions-jekyll
 # Variable for temporary build output files location
 build_dir="/tmp/build_$last_SHA/"
-# Next, checkout the branch containing versioned content for site
-git checkout $version
-# In case the theme changed between versions, run bundle install
-bundle install
-# Create a versioned _config.n.n.yml file for build purposes
-echo "baseurl                  : /$version" > _config.$version.yml
-# First build with any older version branches and latest
-bundle exec jekyll build --config _config.yml,_config.$version.yml \
-  -d /tmp/build_$last_SHA/$version/ > /dev/null 2>&1
-      if [ $? = 0 ]; then
-        echo "Jekyll build successful for " $version
-      else
-        echo "Jekyll build failed for " $version
-        exit 1
-      fi
-# Now, build master branch to /latest
-# Have to stash that _config.n.n.yml file baseurl change
-git stash
-# Checkout master branch
-git checkout master
 # Install latest bundle needs
 bundle install
 bundle exec jekyll build \
 --verbose --config _config.yml \
--d /tmp/build_$short_SHA/latest/ > /dev/null 2>&1
+-d /tmp/build_$short_SHA/ > /dev/null 2>&1
 if [ $? = 0 ]; then
-  echo "Jekyll build successful for master and $version"
+  echo "Jekyll build successful for $branch and $version"
   # Check out origin gh-pages branch
   echo "Checking out gh-pages branch"
   git checkout gh-pages
