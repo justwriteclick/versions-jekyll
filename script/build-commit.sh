@@ -33,7 +33,7 @@ build_dir="/tmp/build_$last_SHA/"
 bundle install
 bundle exec jekyll build \
 --verbose --config _config.yml \
--d /tmp/build_$short_SHA/versions-jekyll/latest > /dev/null 2>&1
+-d /tmp/build_$short_SHA > /dev/null 2>&1
 if [ $? = 0 ]; then
   echo "Jekyll build successful for $branch and $version"
   # Check out origin gh-pages branch
