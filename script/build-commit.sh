@@ -74,7 +74,7 @@ if [ $? = 0 ]; then
   echo "Files committed, pushing to GitHub Pages."
   # Commenting out the push for testing purposes!
   #git push origin gh-pages
-  echo "Push complete. Check http://docs.metacloud.com for updates."
+  echo "Push complete. Check https://justwriteclick.github.io/versions-jekyll/ for updates."
   echo "Moving built files so that you can troubleshoot if needed."
   mkdir -p /tmp/archive/
   mv $clone_dir /tmp/archive/$short_SHA
