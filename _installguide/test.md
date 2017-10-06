@@ -1,8 +1,9 @@
 ---
 title: Creating A Configuration
-permalink: /install-guide/creating-configuration/
+search: true
 redirect_from:
-- /install-guide/get-capabilities/
+    - /install-guide/get-capabilities/
+permalink: /install-guide/creating-configuration/
 ---
 
 The default service implementation is a Linux solution.

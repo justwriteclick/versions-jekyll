@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Search
+search: false
 permalink: /search/
 ---
 
