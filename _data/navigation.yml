@@ -1,10 +1,33 @@
 # main links
+# links for the top navigation bar
 main:
-  - title: "Current Release"
-    url: https://justwriteclick.github.io/versions-jekyll/version/current/
-  - title: "Release 4.1"
-    url: https://justwriteclick.github.io/versions-jekyll/version/4.1/
-  - title: "Release 4.1.1"
-    url: https://justwriteclick.github.io/versions-jekyll/version/4.1.1/
+  - title: "User Guide"
+    url: /user-guide/
 
+  - title: "Installation Guide"
+    url: /install-guide/
 
+  - title: "Version 4.1"
+    url: https://justwriteclick.github.io/versions-jekyll/4.1/
+
+  - title: "Version 4.2"
+    url: https://justwriteclick.github.io/versions-jekyll/4.2/
+
+  - title: "Search"
+    url: /search/
+
+user-guide:
+  - title: User Guide
+    children:
+      - title: "User Guide"
+        url: /user-guide/
+      - title: "Introducing Cool Service"
+        url: /user-guide/introduction/
+
+install-guide:
+  - title: Installation Guide
+    children:
+      - title: "Install Guide"
+        url: /install-guide/
+      - title: "Installation Starting Point"
+        url: /install-guide/introduction/

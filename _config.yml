@@ -13,7 +13,7 @@ title_separator          : "-"
 name                     : "Example for versions"
 description              : "An example site and repo for controlling versions of a web site."
 url                      : https://justwriteclick.github.io # the base hostname & protocol for the site
-baseurl                  : /versions-jekyll/latest # the subpath of the site
+baseurl                  : /latest # the subpath of the site, representing master branch version
 repository               : justwriteclick/versions-jekyll # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 repo                     : versions-jekyll
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
