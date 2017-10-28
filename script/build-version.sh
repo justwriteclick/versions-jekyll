@@ -1,9 +1,11 @@
 #!/bin/bash
 # Builds current committed master branch from GitHub to gh-pages, replacing
 # everything in gh-pages. Intended to be run locally when you want to publish.
+# Run with the version number as a parameter.
 
 # Variables
 installed="bundle"
+version=$1
 
 # Get the latest commit SHA in sourcedir branch
 last_SHA=( $(git log -n 1 --pretty=oneline) )
@@ -11,6 +13,7 @@ last_SHA=( $(git log -n 1 --pretty=oneline) )
 #   last commit SHA, to prevent possible conflicts
 #   with other folder names.
 clone_dir="/tmp/clone_$last_SHA/"
+echo $last_SHA
 
 # Make sure Jekyll is installed locally
 if ! gem list $installed; then
@@ -26,14 +29,14 @@ cd $clone_dir
 git clone git@github.com:justwriteclick/versions-jekyll.git
 cd versions-jekyll
 # Variable for temporary build output files location
-build_dir="/tmp/build_$last_SHA/"
-version=4.1
+build_dir="/tmp/build_$last_SHA"
+echo $build_dir
 # Check out the branch containing versioned content for site
 git checkout stable/$version
 bundle install
 bundle exec jekyll build \
 --config _config.yml,_config.$version.yml \
--d /tmp/$build_dir/versions-jekyll/$version/ > /dev/null 2>&1
+-d $build_dir/versions-jekyll/$version/ > /dev/null 2>&1
 if [ $? = 0 ]; then
   echo "Jekyll build successful for " $version
 else
@@ -47,8 +50,8 @@ git checkout gh-pages
 echo "Copy build dir"
 cp -r $build_dir .
 echo "Adding files to commit"
-# Because this is a clean clone check out, add all files
-git add .
+# Because you don't want to add root files, add only the version folder
+git add $version/
 # Provides a publishing date stamp
 publishdate=`date +%m-%d-%Y`
 echo $publishdate
