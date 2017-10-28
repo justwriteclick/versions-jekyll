@@ -29,13 +29,11 @@ cd versions-jekyll
 build_dir="/tmp/build_$last_SHA/"
 version=4.1
 # Check out the branch containing versioned content for site
-git checkout $version
+git checkout stable/$version
 bundle install
-# Create a versioned _config.n.n.yml file for build purposes
-echo "baseurl                  : /versions-jekyll/$version" > _config.$version.yml
 bundle exec jekyll build \
 --config _config.yml,_config.$version.yml \
--d /tmp/build_$short_SHA/$version/ > /dev/null 2>&1
+-d /tmp/$build_dir/versions-jekyll/$version/ > /dev/null 2>&1
 if [ $? = 0 ]; then
   echo "Jekyll build successful for " $version
 else
